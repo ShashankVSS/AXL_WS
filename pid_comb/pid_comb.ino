@@ -263,16 +263,16 @@ double computePID(double currentDistance) {
 void controlMotorPID(double pidOutput) {
   if (pidOutput > 0) {
     // Move motor down
-    digitalWrite(motorIN1, LOW);
-    digitalWrite(motorIN2, HIGH);
+    digitalWrite(motorIN1, HIGH);
+    digitalWrite(motorIN2, LOW);
     analogWrite(motorPWM, constrain(pidOutput, 0, maxMotorSpeed));
     Serial.println("PID Control: Moving down...");
     nh.loginfo("PID Control: Moving down...");
   }
   else if (pidOutput < 0) {
     // Move motor up
-    digitalWrite(motorIN1, HIGH);
-    digitalWrite(motorIN2, LOW);
+    digitalWrite(motorIN1, LOW);
+    digitalWrite(motorIN2, HIGH);
     analogWrite(motorPWM, constrain(-pidOutput, 0, maxMotorSpeed));
     Serial.println("PID Control: Moving up...");
     nh.loginfo("PID Control: Moving up...");

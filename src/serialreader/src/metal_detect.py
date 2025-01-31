@@ -17,7 +17,7 @@ import threading
 
 # Print available audio devices
 print(sd.query_devices())  
-device = int(input("Enter the device ID: "))  # Select the audio device
+device = 0  # Select the audio device
 
 # Settings
 duration = 0.01  # Duration in seconds for each sample window
